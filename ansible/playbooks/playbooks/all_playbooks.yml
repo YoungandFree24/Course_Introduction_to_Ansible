@@ -1,0 +1,8 @@
+#all-playboooks.yml anthons version
+---
+#use import_playbook feature to run each one of our playbooks
+  - import_playbook: yum-update.yml
+  - import_playbook: install-services.yml
+  - import_playbook: setup-app.yml
+  - import_playbook: setup-lb.yml
+

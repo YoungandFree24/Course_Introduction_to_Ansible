@@ -3,21 +3,23 @@
   - hosts: webservers
     become: true
     tasks:
-      - name: Upload_application_file
+      - name: Upload application file
         copy:
           src: index.php
           dest: /var/www/html
           mode: 0755
 
-      - name: Configure php.ini
+      - name: Configure php.ini file
         lineinfile:
           path: /etc/php.ini
           regexp: ^short_open_tag
           line: 'short_open_tag=On'
+        notify: restart apache
 
+    handlers:
       - name: restart apache
         service: name=httpd state=restarted
 
-      - name: This command will create a file called nope.txt
-        ansible.builtin.shell:
-          cmd: touch nope.txt
+      ###- name: This command will create a file called nope.txt
+        #ansible.builtin.shell:
+          #cmd: touch nope.txt
