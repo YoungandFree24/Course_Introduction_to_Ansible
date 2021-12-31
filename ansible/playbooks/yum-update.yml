@@ -1,8 +1,0 @@
-# yum-update.yml anthony's practice
-
----
-- hosts: webservers:loadbalancers
-  become: True
-  tasks:
-  - name: updating_yum_packages
-    yum: name=* state=latest
