@@ -18,5 +18,5 @@
           - php
           - httpd
         state: present
-    #- name: Ensure apache starts
-      #service: name=httpd state=sstarted enabled=yes
+    - name: Ensure apache starts
+      service: name=httpd state=started enabled=yes
