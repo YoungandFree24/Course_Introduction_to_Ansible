@@ -1,0 +1,10 @@
+#testingcreating new directory on webservers for 5.02 lesson "setup=app.yml"
+---
+  - hosts: webservers
+    become: true
+    tasks:
+      - name: creating_new_direcory
+        ansible.builtin.shell: mkdir hawaii
+
+
+

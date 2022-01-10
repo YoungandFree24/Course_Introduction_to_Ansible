@@ -1,0 +1,11 @@
+# aws-acg-sandbox.yml anthony's version from cloud formation template
+
+---
+  - hosts: local
+    vars:
+      instance_ids:
+        - 'i-0631b5da77eddd9ac'
+        - 'i-0b35afa404aa6740b'
+        - 'i-03a20cd31a7cbab27'
+      region: us-east-1
+      profile: AWSCLiUserAC
